@@ -449,7 +449,7 @@ abstract class ScanBaseActivity extends Activity implements Camera.PreviewCallba
 		String numberResult = getNumberResult();
 		Expiry expiryResult = getExpiryResult();
 		TextView textView = findViewById(mCardNumberId);
-		setValueAnimated(textView, DebitCardUtils.format(numberResult));
+		setValueAnimated(textView, DebitCardUtils.INSTANCE.format(numberResult));
 
 		if (expiryResult != null && duration >= (errorCorrectionDurationMs / 2)) {
 			textView = findViewById(mExpiryId);

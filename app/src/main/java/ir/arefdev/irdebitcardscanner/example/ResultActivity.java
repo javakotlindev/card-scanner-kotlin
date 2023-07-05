@@ -23,11 +23,11 @@ public class ResultActivity extends AppCompatActivity {
 		TextView cardInputWidget = findViewById(R.id.card_input_widget);
 
 		StringBuilder formattedCardNumber = new StringBuilder();
-		for (int i = 0; i < card.number.length(); i++) {
+		for (int i = 0; i < card.getNumber().length(); i++) {
 			if (i == 4 || i == 8 || i == 12) {
 				formattedCardNumber.append(" ");
 			}
-			formattedCardNumber.append(card.number.charAt(i));
+			formattedCardNumber.append(card.getNumber().charAt(i));
 		}
 		String txt = formattedCardNumber.toString();
 

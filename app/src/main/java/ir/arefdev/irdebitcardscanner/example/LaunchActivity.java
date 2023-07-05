@@ -44,9 +44,9 @@ public class LaunchActivity extends AppCompatActivity implements View.OnClickLis
 				DebitCard scanResult = ScanActivity.debitCardFromResult(data);
 
 				Intent intent = new Intent(this, ResultActivity.class);
-				intent.putExtra("cardNumber", scanResult.number);
-				intent.putExtra("cardExpiryMonth", scanResult.expiryMonth);
-				intent.putExtra("cardExpiryYear", scanResult.expiryYear);
+				intent.putExtra("cardNumber", scanResult.getNumber());
+				intent.putExtra("cardExpiryMonth", scanResult.getExpiryMonth());
+				intent.putExtra("cardExpiryYear", scanResult.getExpiryYear());
 				startActivity(intent);
 			} else if (resultCode == ScanActivity.RESULT_CANCELED) {
 				boolean fatalError = data.getBooleanExtra(ScanActivity.RESULT_FATAL_ERROR, false);
